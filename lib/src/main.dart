@@ -74,7 +74,10 @@ class _TextFieldTagsState extends State<TextFieldTags> {
 
   List<Widget> get _getTags {
     List<Widget> _tags = [];
-    List<String> _tempStringContents = widget.initialTags;
+    List<String> _tempStringContents = [];
+    if (widget.initialTags != null && widget.initialTags!.isNotEmpty) {
+      _tempStringContents = widget.initialTags;
+    }
     for (var i = 0; i < _tempStringContents!.length; i++) {
       final String stringContent = _tagsStringContents![i];
       final String stringContentWithHash =

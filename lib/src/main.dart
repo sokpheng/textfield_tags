@@ -74,7 +74,8 @@ class _TextFieldTagsState extends State<TextFieldTags> {
 
   List<Widget> get _getTags {
     List<Widget> _tags = [];
-    for (var i = 0; i < _tagsStringContents!.length; i++) {
+    List<String> _tempStringContents = widget.initialTags;
+    for (var i = 0; i < _tempStringContents!.length; i++) {
       final String stringContent = _tagsStringContents![i];
       final String stringContentWithHash =
           widget.tagsStyler.showHashtag ? "#$stringContent" : stringContent;
